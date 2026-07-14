@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vinny's education, projects, and product design experience.">
+  <title>Portfolio | Vinny's Homepage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Vinny's Homepage, home">
+      <span class="brand-mark" aria-hidden="true">V</span>
+      <span><strong>Vinny's Homepage</strong><small>ISSE · Ritsumeikan University</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html" aria-current="page">Portfolio</a>
+      <a href="trivia.html">Trivia</a>
+    </nav>
+  </header>
+
+  <div class="page-shell">
+    <aside class="sidebar sidebar-left" aria-label="Useful links">
+      <div class="side-card sticky-card">
+        <p class="section-label">Explore</p>
+        <h2>Useful Links</h2>
+        <ul class="link-list">
+          <li><a href="https://en.ritsumei.ac.jp/" target="_blank" rel="noopener noreferrer"><span>Ritsumeikan University</span><span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer"><span>MDN Web Docs</span><span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main id="main-content" class="main-content">
+      <section class="page-intro">
+        <p class="eyebrow">Selected experience</p>
+        <h1>Learning by making.</h1>
+        <p>My education and projects reflect an interest in software, product design, and interdisciplinary engineering.</p>
+      </section>
+
+      <section class="portfolio-section" aria-labelledby="portfolio-heading">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Portfolio table</p>
+          <h2 id="portfolio-heading">Five steps in my journey</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only">Vinny's education and project portfolio</caption>
+            <thead>
+              <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="type-pill education">Education</span></td>
+                <td><strong>Nanjing Foreign Language School Huai'an Branch</strong></td>
+                <td>Completed my senior high school education and prepared for university study.</td>
+                <td class="date-cell">2021–2024</td>
+              </tr>
+              <tr>
+                <td><span class="type-pill invention">Invention</span></td>
+                <td><strong>Automatic Cat Feeder Patent</strong></td>
+                <td>Designed a detachable liner, sliding bowl, and motor-driven clearing mechanism for cleaner, more reliable feeding; produced CAD drawings and patent documentation.</td>
+                <td class="date-cell">2023</td>
+              </tr>
+              <tr>
+                <td><span class="type-pill software">Software</span></td>
+                <td><strong>Maimemo Definition Database Tool</strong></td>
+                <td>Connected to the Maimemo API to upload new English definitions or revise existing entries, with format and update checks.</td>
+                <td class="date-cell">Oct 2025</td>
+              </tr>
+              <tr>
+                <td><span class="type-pill education">Education</span></td>
+                <td><strong>Ritsumeikan University — ISSE</strong></td>
+                <td>Began undergraduate study in Information Systems Science and Engineering.</td>
+                <td class="date-cell">2026–Present</td>
+              </tr>
+              <tr>
+                <td><span class="type-pill software">Software</span></td>
+                <td><strong>Orbit Rogue — PBL1</strong></td>
+                <td>Built a four-stage Java boss rush with shared keyboard/TCP actions and runtime-synthesized music and sound effects.</td>
+                <td class="date-cell">Jun 2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="project-highlights" aria-labelledby="highlights-heading">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Project highlights</p>
+          <h2 id="highlights-heading">Three ways I solve problems</h2>
+        </div>
+        <div class="highlight-grid">
+          <article class="highlight-card">
+            <span>01 · Build</span>
+            <h3>Orbit Rogue</h3>
+            <p>Bringing gameplay, network input, and procedural audio together in one focused Java experience.</p>
+          </article>
+          <article class="highlight-card">
+            <span>02 · Connect</span>
+            <h3>Maimemo API</h3>
+            <p>Turning repetitive vocabulary maintenance into a structured API-driven workflow.</p>
+          </article>
+          <article class="highlight-card">
+            <span>03 · Improve</span>
+            <h3>Cat Feeder Patent</h3>
+            <p>Starting from a hygiene problem and developing a practical electromechanical solution.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar sidebar-right" aria-label="Contact information">
+      <div class="side-card contact-card sticky-card">
+        <p class="section-label">Say hello</p>
+        <h2>Contact Me</h2>
+        <a class="email-link" href="mailto:rabbitdobi@gmail.com">rabbitdobi@gmail.com</a>
+        <form class="contact-form" novalidate>
+          <div class="form-group"><label for="contact-name">Name</label><input id="contact-name" name="name" type="text" autocomplete="name" required><span class="field-error" data-error-for="name"></span></div>
+          <div class="form-group"><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" autocomplete="email" required><span class="field-error" data-error-for="email"></span></div>
+          <div class="form-group"><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="4" required></textarea><span class="field-error" data-error-for="message"></span></div>
+          <button class="button button-secondary" type="submit">Check message</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <p>Designed and created by GAO Chenxuan · July 2026</p>
+    <a href="https://github.com/rabbitdobi?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A three-question quiz that matches your musical taste with a classical composer.">
+  <title>Composer Quiz | Vinny's Homepage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Vinny's Homepage, home">
+      <span class="brand-mark" aria-hidden="true">V</span>
+      <span><strong>Vinny's Homepage</strong><small>ISSE · Ritsumeikan University</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="trivia.html" aria-current="page">Trivia</a>
+    </nav>
+  </header>
+
+  <div class="page-shell">
+    <aside class="sidebar sidebar-left" aria-label="Useful links">
+      <div class="side-card sticky-card">
+        <p class="section-label">Explore</p>
+        <h2>Useful Links</h2>
+        <ul class="link-list">
+          <li><a href="https://en.ritsumei.ac.jp/" target="_blank" rel="noopener noreferrer"><span>Ritsumeikan University</span><span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer"><span>MDN Web Docs</span><span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main id="main-content" class="main-content">
+      <section class="page-intro trivia-intro">
+        <p class="eyebrow">A three-question listening game</p>
+        <h1>Who is your classical<br><em>composer match?</em></h1>
+        <p>Choose the sounds, moods, and experiences that attract you. Your answers will place you on a playful musical alignment chart.</p>
+      </section>
+
+      <section class="quiz-panel" aria-labelledby="quiz-heading">
+        <div class="quiz-heading-row">
+          <div>
+            <p class="eyebrow">Quick match</p>
+            <h2 id="quiz-heading">Follow your musical instinct</h2>
+          </div>
+          <span class="question-count">3 questions</span>
+        </div>
+
+        <form id="composer-quiz">
+          <fieldset class="quiz-question">
+            <legend><span>01</span> Which musical structure attracts you most?</legend>
+            <label class="quiz-option"><input type="radio" name="structure" value="lawful" required><span><strong>Architectural precision</strong><small>Clear patterns, counterpoint, and satisfying resolution</small></span></label>
+            <label class="quiz-option"><input type="radio" name="structure" value="neutral"><span><strong>Flexible balance</strong><small>Form matters, but color and expression can reshape it</small></span></label>
+            <label class="quiz-option"><input type="radio" name="structure" value="chaotic"><span><strong>Fearless invention</strong><small>Surprise me, disrupt the pattern, and break the rules</small></span></label>
+          </fieldset>
+
+          <fieldset class="quiz-question">
+            <legend><span>02</span> Which emotional atmosphere feels most magnetic?</legend>
+            <label class="quiz-option"><input type="radio" name="mood" value="good" required><span><strong>Warm and life-affirming</strong><small>Melody, tenderness, hope, and a sense of light</small></span></label>
+            <label class="quiz-option"><input type="radio" name="mood" value="neutral"><span><strong>Reflective and ambiguous</strong><small>Complex feelings that do not need a simple answer</small></span></label>
+            <label class="quiz-option"><input type="radio" name="mood" value="evil"><span><strong>Dark and uncanny</strong><small>Intensity, mystery, danger, and beautiful unease</small></span></label>
+          </fieldset>
+
+          <fieldset class="quiz-question">
+            <legend><span>03</span> Choose your ideal listening experience.</legend>
+            <label class="quiz-option"><input type="radio" name="experience" value="lawful-good" required><span><strong>A cathedral of sound</strong><small>Grand, precise, luminous, and deeply ordered</small></span></label>
+            <label class="quiz-option"><input type="radio" name="experience" value="neutral-neutral"><span><strong>A private dream</strong><small>Intimate, fluid, colorful, and open to interpretation</small></span></label>
+            <label class="quiz-option"><input type="radio" name="experience" value="chaotic-evil"><span><strong>The edge of the unknown</strong><small>Overwhelming, strange, radical, and unforgettable</small></span></label>
+          </fieldset>
+
+          <p class="quiz-error" role="alert"></p>
+          <button class="button button-primary quiz-submit" type="submit">Reveal my composer</button>
+        </form>
+
+        <div id="quiz-result" class="quiz-result" hidden tabindex="-1" aria-live="polite">
+          <p class="result-kicker">Your musical alignment</p>
+          <p class="result-alignment"></p>
+          <h2 class="result-name"></h2>
+          <p class="result-description"></p>
+          <p class="result-work"></p>
+          <button class="text-button" type="button" id="retake-quiz">Retake the quiz</button>
+        </div>
+      </section>
+
+      <section class="alignment-section" aria-labelledby="alignment-heading">
+        <div class="section-heading compact-heading">
+          <p class="eyebrow">Explore all nine</p>
+          <h2 id="alignment-heading">The composer alignment grid</h2>
+          <p>Click any composer to see why they occupy that musical territory.</p>
+        </div>
+
+        <div class="alignment-layout">
+          <div class="alignment-chart" aria-label="Composer alignment chart">
+            <div class="axis-corner" aria-hidden="true"></div>
+            <div class="axis-label">Lawful</div><div class="axis-label">Neutral</div><div class="axis-label">Chaotic</div>
+            <div class="axis-label axis-row">Good</div>
+            <button class="composer-cell tone-good" type="button" data-composer="bach"><span>J.S.</span><strong>Bach</strong></button>
+            <button class="composer-cell tone-good" type="button" data-composer="schubert"><span>Franz</span><strong>Schubert</strong></button>
+            <button class="composer-cell tone-good" type="button" data-composer="beethoven"><span>Ludwig van</span><strong>Beethoven</strong></button>
+            <div class="axis-label axis-row">Neutral</div>
+            <button class="composer-cell tone-neutral" type="button" data-composer="brahms"><span>Johannes</span><strong>Brahms</strong></button>
+            <button class="composer-cell tone-neutral" type="button" data-composer="debussy"><span>Claude</span><strong>Debussy</strong></button>
+            <button class="composer-cell tone-neutral" type="button" data-composer="mahler"><span>Gustav</span><strong>Mahler</strong></button>
+            <div class="axis-label axis-row">Evil</div>
+            <button class="composer-cell tone-evil" type="button" data-composer="wagner"><span>Richard</span><strong>Wagner</strong></button>
+            <button class="composer-cell tone-evil" type="button" data-composer="scriabin"><span>Alexander</span><strong>Scriabin</strong></button>
+            <button class="composer-cell tone-evil" type="button" data-composer="ligeti"><span>György</span><strong>Ligeti</strong></button>
+          </div>
+
+          <article id="composer-detail" class="composer-detail" aria-live="polite">
+            <p class="detail-alignment">Lawful Good</p>
+            <div class="composer-monogram" aria-hidden="true">JB</div>
+            <h3>Johann Sebastian Bach</h3>
+            <p class="detail-description">Meticulous counterpoint, spiritual clarity, and an extraordinary sense of balance make Bach the architect of this grid.</p>
+            <p class="detail-work"><strong>Start with:</strong> Goldberg Variations</p>
+          </article>
+        </div>
+        <p class="grid-note">“Good” and “evil” describe musical atmosphere only—not the composers' character or morality.</p>
+      </section>
+    </main>
+
+    <aside class="sidebar sidebar-right" aria-label="Contact information">
+      <div class="side-card contact-card sticky-card">
+        <p class="section-label">Say hello</p>
+        <h2>Contact Me</h2>
+        <a class="email-link" href="mailto:rabbitdobi@gmail.com">rabbitdobi@gmail.com</a>
+        <form class="contact-form" novalidate>
+          <div class="form-group"><label for="contact-name">Name</label><input id="contact-name" name="name" type="text" autocomplete="name" required><span class="field-error" data-error-for="name"></span></div>
+          <div class="form-group"><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" autocomplete="email" required><span class="field-error" data-error-for="email"></span></div>
+          <div class="form-group"><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="4" required></textarea><span class="field-error" data-error-for="message"></span></div>
+          <button class="button button-secondary" type="submit">Check message</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <p>Designed and created by GAO Chenxuan · July 2026</p>
+    <a href="https://github.com/rabbitdobi?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>

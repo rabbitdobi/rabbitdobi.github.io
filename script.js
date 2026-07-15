@@ -148,12 +148,11 @@ composerButtons.forEach((button) => {
   button.addEventListener("click", () => showComposer(findComposerByKey(button.dataset.composer)));
 });
 
-if (detailPanel) showComposer(composerData["lawful-good"]);
-
 const quiz = document.querySelector("#composer-quiz");
 
 if (quiz) {
   const resultPanel = document.querySelector("#quiz-result");
+  const revealSection = document.querySelector("#alignment-reveal");
   const errorMessage = quiz.querySelector(".quiz-error");
 
   quiz.addEventListener("submit", (event) => {
@@ -188,15 +187,31 @@ if (quiz) {
     resultPanel.querySelector(".result-name").textContent = composer.name;
     resultPanel.querySelector(".result-description").textContent = composer.description;
     resultPanel.querySelector(".result-work").innerHTML = `<strong>Recommended:</strong> ${composer.work}`;
-    resultPanel.hidden = false;
-    resultPanel.focus();
+    resultPanel.querySelector(".result-monogram").textContent = composer.monogram;
     showComposer(composer);
+    revealSection.hidden = false;
+    revealSection.classList.remove("is-visible");
+    requestAnimationFrame(() => revealSection.classList.add("is-visible"));
+    revealSection.focus({ preventScroll: true });
+    revealSection.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start"
+    });
   });
 
   document.querySelector("#retake-quiz").addEventListener("click", () => {
     quiz.reset();
-    resultPanel.hidden = true;
+    revealSection.hidden = true;
+    revealSection.classList.remove("is-visible");
     errorMessage.textContent = "";
-    quiz.querySelector("input").focus();
+    composerButtons.forEach((button) => {
+      button.classList.remove("is-active");
+      button.setAttribute("aria-pressed", "false");
+    });
+    quiz.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start"
+    });
+    quiz.querySelector("input").focus({ preventScroll: true });
   });
 }

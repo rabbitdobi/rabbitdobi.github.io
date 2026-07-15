@@ -81,21 +81,28 @@
           <button class="button button-primary quiz-submit" type="submit">Reveal my composer</button>
         </form>
 
-        <div id="quiz-result" class="quiz-result" hidden tabindex="-1" aria-live="polite">
-          <p class="result-kicker">Your musical alignment</p>
-          <p class="result-alignment"></p>
-          <h2 class="result-name"></h2>
-          <p class="result-description"></p>
-          <p class="result-work"></p>
-          <button class="text-button" type="button" id="retake-quiz">Retake the quiz</button>
-        </div>
       </section>
 
-      <section class="alignment-section" aria-labelledby="alignment-heading">
+      <section id="alignment-reveal" class="alignment-section alignment-reveal" aria-labelledby="alignment-heading" tabindex="-1" hidden>
+        <div id="quiz-result" class="match-spotlight" aria-live="polite">
+          <div class="result-copy">
+            <p class="result-kicker">Your musical alignment</p>
+            <p class="result-alignment"></p>
+            <h2 class="result-name"></h2>
+            <p class="result-description"></p>
+            <p class="result-work"></p>
+            <button class="text-button" type="button" id="retake-quiz">Retake the quiz</button>
+          </div>
+          <div class="result-seal" aria-hidden="true">
+            <span class="result-monogram"></span>
+            <small>Your match</small>
+          </div>
+        </div>
+
         <div class="section-heading compact-heading">
-          <p class="eyebrow">Explore all nine</p>
-          <h2 id="alignment-heading">The composer alignment grid</h2>
-          <p>Click any composer to see why they occupy that musical territory.</p>
+          <p class="eyebrow">The full result map</p>
+          <h2 id="alignment-heading">See where your match lives.</h2>
+          <p>Your highlighted composer is shown below. Click another name to compare its musical personality.</p>
         </div>
 
         <div class="alignment-layout">
@@ -124,7 +131,7 @@
             <p class="detail-work"><strong>Start with:</strong> Goldberg Variations</p>
           </article>
         </div>
-        <p class="grid-note">“Good” and “evil” describe musical atmosphere only—not the composers' character or morality.</p>
+        <p class="grid-note">This is a playful map of musical atmosphere. “Good” and “evil” do not describe the composers' character or morality.</p>
       </section>
     </main>
 

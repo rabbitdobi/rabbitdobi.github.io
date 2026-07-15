@@ -265,7 +265,7 @@ button { color: inherit; }
   position: absolute;
   inset: -28px;
   z-index: -2;
-  background: linear-gradient(rgba(75, 30, 96, .25), rgba(42, 18, 58, .5)), url("profile.jpeg") 66% 42% / cover;
+  background: linear-gradient(rgba(75, 30, 96, .25), rgba(42, 18, 58, .5)), url("profile-blurred.jpeg") 66% 42% / cover;
   filter: blur(16px) saturate(.72);
   transform: scale(1.08);
 }
